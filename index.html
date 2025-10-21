@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Falling Dot Hunter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <div class="title">Falling Dot Hunter</div>
+          <div class="sub">점수를 딱 맞춰서 클리어! 스테이지를 순차적으로 해금해 보세요.</div>
+        </div>
+        <div class="toolbar">
+          <button class="btn ghost" id="goStage">스테이지로</button>
+          <button class="btn danger" id="resetProgress">진행도 초기화</button>
+        </div>
+      </div>
+
+      <!-- STAGE SELECT -->
+      <div id="stageSelect" class="panel">
+        <h2 style="margin:0 0 12px">스테이지 선택</h2>
+        <div class="stage-grid" id="stageGrid"><!-- JS가 카드들 생성 --></div>
+        <div class="tip">잠금된 스테이지는 이전 스테이지를 클리어하면 자동 해금됩니다.</div>
+      </div>
+
+      <!-- GAME -->
+      <div id="game" class="panel">
+        <div class="game-wrap">
+          <div class="canvas-card">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+          </div>
+          <div class="hud">
+            <div class="box">
+              <div class="kv"><span class="k">목표 점수</span><span class="v"><span id="GoalPoint">0</span></span></div>
+            </div>
+            <div class="box">
+              <div class="kv"><span class="k">현재 점수</span><span class="v"><span id="score">0</span></span></div>
+            </div>
+            <div class="box">
+              <div class="k">팁</div>
+              <div class="tip">파란/금색 공은 +점수, 빨간/분홍 공은 -점수입니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/game.js"></script>
+  </body>
+</html>
